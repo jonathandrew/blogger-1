@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Button from "./Button";
 
 class CreateBlog extends Component {
   constructor() {
     super();
     this.state = {
       blog: {
-        title: '',
-        subject: '',
-        author: '',
-        article: '',
+        title: "",
+        subject: "",
+        author: "",
+        article: "",
         objectId: new Date().getTime(),
       },
     };
@@ -26,14 +27,14 @@ class CreateBlog extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.handleCreateBlogSubmit(event, this.state.blog);
-    let emptyBlog = { title: '', author: '', subject: '', article: '' };
+    let emptyBlog = { title: "", author: "", subject: "", article: "" };
     this.setState({ blog: emptyBlog });
     event.target.reset();
   };
 
   render() {
     return (
-      <div style={{ margin: '40px', width: '300px' }}>
+      <div style={{ margin: "40px", width: "300px" }}>
         <h1>Create Blog:</h1>
         <form onSubmit={this.handleSubmit} className="ui form">
           <div className="equal width fields">
@@ -93,9 +94,9 @@ class CreateBlog extends Component {
             </div>
           </div>
           <div className="field">
-            <button type="submit" className="ui button">
+            <Button type="submit" className="ui button">
               Submit
-            </button>
+            </Button>
           </div>
         </form>
       </div>

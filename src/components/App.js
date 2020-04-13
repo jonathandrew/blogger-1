@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Search from './Search';
-import CreateBlog from './CreateBlog';
-import Blogs from './Blogs';
-import blogs from '../data/data';
+import React, { Component } from "react";
+import Search from "./Search";
+import CreateBlog from "./CreateBlog";
+import Blogs from "./Blogs";
+import blogs from "../data/data";
 
 // function searchIt(term) {
 //   return function (item) {
@@ -19,7 +19,7 @@ class App extends Component {
     super();
     this.state = {
       blogs,
-      searchTerm: '',
+      searchTerm: "",
     };
     this.onDelete = this.onDelete.bind(this);
   }
@@ -30,7 +30,7 @@ class App extends Component {
     );
 
     this.setState({ blogs: updatedBlogs });
-    console.log('Delete item with id: ', id);
+    console.log("Delete item with id: ", id);
   }
 
   handleChange = (event) => {
@@ -57,18 +57,18 @@ class App extends Component {
     return (
       <div
         style={{
-          marginTop: '100px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
+          marginTop: "100px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
         }}
       >
         <Search
           handleChange={this.handleChange}
           searchTerm={this.state.searchTerm}
         />
-        <hr style={{ width: '75%', color: '#3b3b3b', margin: '50px 0' }} />
+        <hr style={{ width: "75%", color: "#3b3b3b", margin: "50px 0" }} />
         <CreateBlog handleCreateBlogSubmit={this.handleCreateBlogSubmit} />
         {/* <form className="ui form">
           <div className="field">
