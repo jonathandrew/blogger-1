@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React from "react";
+import PropTypes from "prop-types";
 const Search = (props) => {
   return (
     <div>
@@ -16,4 +16,9 @@ const Search = (props) => {
     </div>
   );
 };
+Search.propTypes = {
+  onChange: PropTypes.func,
+  value: PropTypes.string.isRequired,
+};
+
 export default Search;

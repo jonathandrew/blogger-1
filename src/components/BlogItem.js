@@ -1,15 +1,14 @@
 import React from "react";
 import Button from "./Button";
-
 const BlogItem = ({
   onDelete,
-  blog: { title, author, subject, article, objectId },
+  onUpdate,
+  blog: { title, author, subject, article, _id: id },
 }) => {
   return (
     <div className="ui card" style={{ width: "75%", padding: "20px" }}>
       <div className="content">
         <div className="header">{title}</div>
-
         <br />
         <span style={{ fontWeight: "bold", color: "3b3b3b" }}>
           <div className="meta">Author: {author}</div>
@@ -20,22 +19,21 @@ const BlogItem = ({
         <hr />
         <div className="description">{article}</div>
         <Button
-          className="ui primaryBbutton"
+          className="ui primary button"
           style={{ margin: "10px 15px" }}
           onClick={() => {
-            return onDelete(objectId);
+            return onDelete(id);
           }}
         >
           Delete
         </Button>
         <Button
-          className="ui primaryGbutton"
+          className="ui green button"
           style={{ margin: "10px 15px" }}
           onClick={() => {
-            return onDelete(objectId);
+            return onUpdate(id);
           }}
         >
-          {" "}
           Update
         </Button>
       </div>
